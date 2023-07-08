@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量定义</title>
+</head>
+<body>
+    <script>
+       /*  var a = 100;
+        a = "张三";
+        // 通过alert，可以将a的值以警告框的形式在浏览器打开的HTML网页中弹出
+        if(a=="张三"){
+            window.alert(a);
+        }
+        window.alert(a);//特点一：var声明的变量为全局变量
+        var x = 1;
+        var x = "A";//可以重复声明
+        alert(x);//A */
+
+        //js中let关键字来声明变量是一个局部变量，只在声明的代码块中可以访问。
+       /*  {
+            let b = 1;
+            alert(b);
+            //let b = 2;同时let定义的变量不能重复声明，这样编辑器会报错
+        } */
+
+
+        //alert(b);
+        //js中使用const关键字声明的变量其实就类似一个常量，一旦声明，其值就不能再改变了
+        
+        {   
+             const PI = 3.14;
+            PI = 3.1415926;
+            alert(PI);
+        }
+        // 我们发现没有拿到我们想要的值，我们可以打开浏览器的开发者工具，点击Console，发现我们写的这个程序已经报错了。
+</script>
+</body>
+</html>

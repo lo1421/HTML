@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据类型</title>
+</head>
+<body>
+    <script>
+        //原始数据类型演示
+        alert(typeof 3);//拿到的类型是number
+        alert(typeof 3.14);//拿到的类型是number
+
+        alert(typeof "A");//拿到的类型是string
+        alert(typeof 'Hello');//拿到的类型是string
+
+        alert(typeof true);//boolean
+        alert(typeof false);//boolean
+
+        alert(typeof null);//这个拿到的是什么类型？拿到的是一个object类型的变量，object表示拿到的是一个对象
+/* 
+    为什么这里拿到的不是null而是一个object类型，其实这是因为这里是js早期的一个bug，不过被沿用至今了而已。
+我们可以去打开官方文档W3CSchool，点击官方文档首页面的Browser Side，然后点击JavaScript，然后再点击JS教程。找到
+JS当中的数据类型，找到页面的底部的课外阅读框中的“ECMAScript原始类型”五种数据类型中有一种就是null，然后注释中
+也解释为什么会出现使用typeof运算符查询null的原始类型的时候返回的是一个object类型。现在null被认为是对象的占位符，从而解释了这一矛盾
+但是从技术上来说，它仍然是原始值。
+ */        var a ;
+        alert(typeof a);//这个是没有初始化的变量，那么拿到的值是什么类型的呢？应该即使undefined
+    </script>
+</body>
+</html>

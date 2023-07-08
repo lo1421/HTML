@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-运算符</title>
+</head>
+<body>
+    <script>
+        var age = 20;
+        var _age = "20";
+        var $age = 20;
+
+        alert(age == _age);//true
+        alert(age === _age);//false
+        alert(age === $age);//true
+
+        //类型转换-字符串转为数字
+
+        // 字符串类类型转换为int型，如果双引号里面是数字那么就类型转换为数字，如果引号里面不是数字那么就转换为NAN
+        alert(parseInt("12"));//12
+        alert(parseInt("12A45"));//12
+        /*
+        使用parseInt()将字符串转换成int型的时候，会从第一个数开始判断，
+        如果是数字就转换，一旦遇见不是数字的字符就停止转换，所以上述的
+        转换的结果就是12，因为检测到A不是数字就停止了转换。
+        */
+        alert(parseInt("A45"));//NaN(表示Not a number不是一个数字)
+       /* 
+        由于这里一个开始检测的时候发现一个数字都没有，然后就不进行检测了，
+        直接判断该字符中的内容不是数字，然后就直接返回NaN
+        */
+
+        //其他类型转换为boolean类型
+
+        //这里是数字类型转换为boolean类型
+        if(0){//由于if表达式中是一个boolean类型，那么这里就会有其他类型转换为boolean类型的一个转换
+            alert("0 转换为false");
+        }
+        if(NaN){
+            alert("NaN转换为false");
+        }
+        if(-1){
+            alert("除0和NaN其他数字都转换为true");//这一行会输出，这里的if和java当中的if一样，只有if表达式为true才会执行括号里的内容
+        }
+
+        //字符串类型转换为boolean类型，只有空的内容的字符串转换为boolean类型的才会是false，其他情况全部都为true
+        if(!""){
+            alert("空字符串为false，其他都true")
+        }
+
+        //null类型转换为boolean类型
+        if(!null){
+            alert("null 转换为false");
+        }
+        
+        //为声明的类型默认是undefined类型，这个类型转换为boolean类型也是false
+        if(!undefined){
+            alert("undefined转换为false");
+        }
+
+    </script>
+</body>
+</html>
