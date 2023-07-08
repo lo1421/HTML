@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-函数</title>
+</head>
+<body>
+    <script>
+        //我们可以在HTML文件的任意位置引入js代码，js的引入有两种方式，分别为：内部脚本和外部脚本
+        /*我们现在采用的就是内部脚本，是通过在html文件中的任意位置，使用HTML中的一个<script>标签来引入的
+        这种方式和把CSS样式引入到HTML中的第二种内嵌样式是非常相似的，都是通过一个HTML中专门为CSS和JS提供的
+        专属标签来引入对应的代码。  
+        */
+       
+        //定义函数d的第一种方式！
+        function add(a,b){
+            //js中的函数的形参是不需要指定类型的，js函数的声明也不需要指定返回值的类型，这都是因为JS是一门弱类型的语言
+        return a+b;//函数的具体实现就是将传递进来的两个实参相加之后返回一个结果即可。
+        }
+
+        //函数的调用
+        var value = add(10,20);
+        alert(value);
+
+        //函数调用的第二种方式！
+        var sum = function(a,b){
+            return a+b;
+        }
+
+        //函数的调用
+        var value = add(10,20);
+        alert(value);
+
+    </script>
+</body>
+</html>
