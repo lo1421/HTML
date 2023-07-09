@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象.JSON</title>
+</head>
+<body>
+    <script>
+        // javascript当中的自定义一个对象是如何实现的呢？
+        var person = {
+            id:1234567,
+            name:"张三",
+            sex :false,
+            speak: function(){
+                alert("在说话");
+            }
+        }
+        //自定义的对象的使用，通过调用对象中的属性和函数
+        alert(person.name);
+        alert(person.id);
+        alert(person.sex);
+        //调用自定义的方法
+        person.speak();
+
+        //完成定义一个JSON文本，这个JSON还不是对象，那么我们该如何获取JSON当中的值呢？
+        var josnstr = '{"name":"张三","age":20,"addr":["北京","上海"]}';
+        //试着访问JSON当中的属性
+        alert(josnstr.name);//undefined
+        //这是因为JSON目前只是一个字符串，引号包裹住的，那么现在我们该如何去获取或者访问JSON当中的属性呢？
+        /*
+        这就涉及到了js当中给我们提供的JSON对象了，这个提供给我们的JSON对象中有两个我们可以利用起来的方法
+        
+        */
+    </script>
+</body>
+</html>

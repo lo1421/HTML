@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02.JS-对象-Array</title>
+</head>
+<body>
+    <script>
+         //定义数组的第一种方式
+    var arr = new Array(1,2,3,4);
+        //定义数组的第二种方式
+    var arr1 =[5,6,7,8,];
+    //访问数组中的元素
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr1[0]);
+    console.log(arr1[1]);
+    arr[10] = 50;
+    //这代表我要把arr数组中的值赋值为50，但是我们定义的数组的长度是4，
+    //这在java中是会报错的，但是在JS的数组中，数组的长度是可变的，值也是可以修改的
+    //我们现在向浏览器的控制台输出一下这个数组的值
+    console.log(arr[10]);
+    //那么这里会有疑问，那么数组当中索引为8、7、6...等等的值又是多少呢？
+    //我们可以输出一下索引为9，索引为8的值是什么？
+    console.log(arr[9]);//undefined
+    console.log(arr[8]);//undefined
+
+    /*现在咱门可以测试一下Js数组当中的元素的类型是否可变，因为之前测试的数组的长度是可变的，
+    要是数组的类型也是可变的话，这就意味着数组当中是可以存放不同类型的元素的*/
+    //我们把索引为9的arr数组元素的值设置为字符串类型的，看看是否会报错，如果不报错而且成功输出了那么就可以证明
+    arr[9] = "school";
+    alert(arr[9]);
+
+    //在这里我们来试着遍历数组：在这里我们遍历具体定义的arr数组吧
+    //那么遍历数组会用到什么呢？会用到数组对象中的length属性，来获取数组的长度。
+    for (let i = 0; i < arr.length; i++) {//这里for循环的循环条件用到了js数组对象的length属性了
+        console.log(arr[i]);
+    }/*
+    这里可以使用快捷方式直接生成，那就是直接写出关键字for，然后选择右边有类型的对应的for
+    这里的卡伊解释和IDEA中的十分类似*/
+
+    //forEach方法：遍历数组当中有值的元素
+    arr.forEach(function(e){
+        console.log(e);
+    });//我们直接可以声明一个函数
+/*     这个函数forEach的功能就是每遍历一次，那么就会调用一次这个函数function，然后function的具体实现又是
+去输出遍历到的元素，那么整体的功能就是遍历数组中有储存值的元素 */    
+    //简化形式：使用箭头函数：(...)=>(...)
+    arr.forEach((e)=>{
+        console.log(e);
+    })
+</script>
+</body>
+</html>

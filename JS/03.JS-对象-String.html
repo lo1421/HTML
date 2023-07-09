@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-String</title>
+</head>
+<body>
+    <script>
+        //创建字符串对象
+        //第一种方式
+      //  var str = new String("Hello String");
+        //第二种方式(明显更加方便)
+        var str = "Hello String     ";
+         
+        
+        //length属性
+         console.log(str.length);//获取length属性的值：12
+
+         //charAt()获取指定位置的字符
+        console.log(str.charAt(4));//o
+
+         //indexOf()检索字符串,传入要检索的元素，获取该元素在数组中的下标
+         console.log(str.indexOf('H'));//0
+
+         //trim()去除字符串左右两侧的空格，字符串str的右侧有空格,去除之后又会返回一个新的字符串
+        var s = str.trim();
+        console.log(s);//Hello String
+
+         //substring(start,end)，截取字符串之后获取一个子字符串的方法,参数：开始索引，结束索引（含头不含尾）
+        console.log(s.substring(0,5));//Hello
+        
+
+    </script>
+</body>
+</html>e
