@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-DOM</title>
+</head>
+<body>
+    <img  id = 'h1' src="D:\HTML\img\off.gif"> <br><br>
+
+    <div class="cls">传智教育</div> <br>
+    <div class = "cls ">黑马程序员</div> <br>
+
+    <input type="checkbox" name="hobby"> 电影
+    <input type="checkbox" name="hobby">旅游
+    <input type="checkbox" name="hobby">游戏 
+</body>
+<script>
+    //1.获取Element元素
+    //1.1获取元素-根据ID获取
+   /* var img = document.getElementById('h1');
+   alert(img);//可以弹出来看看我们是否获取到了封装好的元素对象,获取到了=>[object HTMLImageElement]
+ */
+    //1.2获取元素-根据标签获取(返回的是一个对象类型的数组，所以是复数的形式)
+   /*  var divs =  document.getElementsByTagName('div');
+   for (let i = 0; i < divs.length; i++) {
+    alert(divs[i]);
+   } */
+
+    //1.3获取元素-根据name属性获取(由于name属性也不是唯一的，所以就直接返回一个数组)
+  /* var ins =   document.getElementsByTagName('hobby');
+    for (let j = 0; j < ins.length; j++) {
+        alert(ins[j]);
+    } */
+    
+    //1.4获取元素-根据class属性获取（由于class属性的值是可以重复的，所以返回的值就也是一个储存元素对象的数组）
+   /*  var divs = document.getElementsByClassName('cls');
+    for (let j = 0; j < divs.length; j++) {
+        alert(divs[j]);   
+    } */
+    //通过上述操作，我们已经可以获取到任何一个被封装成元素的属性了。
+    // 现在就可以通过一些属性或者方法来对我们获取到的元素对象进行一些操作来修改了
+    //由于返回来的divs是一个数组，我们现在的业务是修改第一个div
+    var divs = document.getElementsByClassName('cls');
+   /*  我们可以去官方文档的JS中的HTML DOM对象，然后找到被封装好的div标签的对象，
+    然后再看看里面有什么方法和属性可以被我们利用然后来修改元素的内容。然后我们就
+    发现了一个element.InnerHTML这个属性是用来“返回元素的内容或者设置元素的内容的” */
+    
+    //声明一个变量去接收数组中的第一个元素同时也是一个对象，当中有属性也有方法
+    var div1 = divs[0];
+    //设置这个元素
+    div1.innerHTML ="传智教育很厉害";
+
+</script>
+</html>

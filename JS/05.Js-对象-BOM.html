@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-对象-BOM</title>
+</head>
+<body>
+    <script>
+        //获取
+    /*  window.alert("Hello BOM");
+        alert("Hello BOM Window"); */
+        //方法
+        //confirm()方法被调用之后，会在浏览器弹出一个对话框，然后在对话框中弹出一个提示的信息
+    // confirm("您确认删除该记录吗？");
+        //由于有两个选项，一个是确认，一个是取消，选择不同的选项的结果是不一样的，那么我们要如何知道用户选择的是什么呢？
+        // 其实这个confirm（）方法有一个返回值的，那么这个返回值到底是什么呢？
+    var flag = window.confirm("您确定要删除该文件吗？");
+    //直接使用alert方法把这个值弹出来，看看返回的是什么值？
+    alert(flag);
+    // 当我们点击确定的时候，返回值是true；然后再刷新一下，点击取消的按钮，返回的值是false。
+
+    //定时器-setInterval（）：周期性的执行某一个函数。
+    //这个方法中有两个参数，一个是定期执行哪个函数，第二个是间隔多少毫秒去执行一次前面的那个函数
+    var i= 0;
+    setInterval(function(){ 
+        i++;
+    console.log("定时器执行的次数为："+i);
+    },1000);
+
+    //定时器-setTimeout（）：延迟指定时间执行一次，注意真的就只是执行一次。
+    //这个方法也是有参函数，当中有两个参数，第一个参数是要执行的函数，第二个是延迟多少时间才去执行。
+    setTimeout(function(){
+alert("JS");
+    },3000);//表示3秒之后就要执行这个函数了。
+    
+    </script>   
+</body>
+</html>
