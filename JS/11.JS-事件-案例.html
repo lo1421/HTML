@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-事件-案例</title>
+</head>
+<body>
+    <!-- 这里是先使用HTML中的标签完成页面的内容也就是元素 -->
+    <img src="../img/off.gif" id="light" >
+    <br>
+    <input type="button" value="点亮" onclick="on()">
+    <input type="button" value="熄灭" onclick="off()">
+    <br><br>
+    <input type="text"  id = "name" value="ITCAST"  onfocus = "lower()" onblur="upper()" >
+    <br><br>
+    <input type="checkbox" name="hobby">电影
+    <input type="checkbox" name="hobby">旅游
+    <input type="checkbox" name="hobby">游戏
+    <br>
+    <input type="button" value="全选" onclick="checkAll()" >
+    <input type="button" value="反选" onclick="reverse()">
+</body>
+<script>
+    //1.点击“点亮”按钮，点亮灯泡；点击“熄灭”按钮，熄灭灯泡；--onclick事件作为一个属性绑定一个DOM对象里的方法
+    function on(){
+        //先获取DOM封装好的img元素对象
+        var img = document.getElementById("light");
+        //然后利用获取的对象中的属性来完成src属性的修改
+        img.src ="../img/on.gif";
+    }
+    function off(){
+        //获取DOM中的img元素对象
+        var img = document.getElementById("light");
+        img.src ="../img/off.gif";
+    }
+    //2.输入框聚焦之后，展示小写；输入框离焦之后，展示大写 --onfocus ,onblur
+    function  lower(){
+        //聚焦文本框之后展示小写
+        //利用DOM对象，来获取输入框元素对象，然后访问对象中的方法或者属性
+        var input = document.getElementById("name");
+        //将值转为小写,这里的值就是value，这里涉及到字符串的大小写的转换
+        input.value = input.value.toLowerCase();
+    }
+    function upper(){
+        var input = document.getElementById("name");
+        input.value = input.value.toUpperCase();
+    }
+    //3.点击“全选”按钮使所有的复选框呈现选中状态；点击“反选”按钮是所有的复选框呈现取消勾选的状态
+    function checkAll(){//全选
+//要获取所有的元素的对象
+var hobbys = document.getElementsByName("hobby");//返回的是一个对象的数组
+//通过for循环获取当中的一个一个的元素
+for (let i = 0; i < hobbys.length; i++) {
+   //然后访问对象中的方法或者属性，完成全选
+    const element = hobbys[i];
+    element.checked = true;
+}
+
+    }
+    function reverse(){//反选
+//要获取所有的元素的对象
+var hobbys = document.getElementsByName("hobby");//返回的是一个对象的数组
+//通过for循环获取当中的一个一个的元素
+for (let i = 0; i < hobbys.length; i++) {
+   //然后访问对象中的方法或者属性，完成反选
+    const element = hobbys[i];
+    element.checked = false;
+}
+
+    }
+    
+</script>
+</html>
